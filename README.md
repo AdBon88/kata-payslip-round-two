@@ -1,1 +1,1 @@
-# kata-payslip-round-two
+# PayslipKata
