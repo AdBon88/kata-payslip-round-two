@@ -13,13 +13,20 @@ namespace PayslipKata
             Console.Write("Please input your surname: ");
             var surname = Console.ReadLine();
             Console.Write("Please input your annual salary: ");
-            //var annualSalary = GetAnnualSalary();
+            var annualSalary = GetAnnualSalary();
 
         }
 
-        private static int GetAnnualSalary()
+        private static decimal GetAnnualSalary()
         {
-            return 0;
+            var input = Console.ReadLine();
+            decimal annualSalary;
+            while (!InputValidator.TryParseAnnualSalary(input, out annualSalary))
+            {
+                Console.Write("Please enter a number greater than zero!: ");
+                input = Console.ReadLine();
+            }
+            return annualSalary;
         }
     }
 }
